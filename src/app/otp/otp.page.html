@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-content>
+    <ion-card><ion-card-header><ion-card-title>
+      <h3  align="center" style="color: #f5821f;  font-size: 20px;"><b>Verify OTP</b></h3>
+      </ion-card-title></ion-card-header> 
+     <ion-card-content>
+       <form ngNativeValidate #form="ngForm" (ngSubmit)="otp(form.value)">
+        
+         <ion-item>
+           <ion-label position="floating"><ion-icon name="key"></ion-icon>  OTP</ion-label>
+           <ion-input type="tel" name="mob"  minLength="4" maxLength="6" required [(ngModel)]="mob"></ion-input>
+         </ion-item>
+        
+         
+
+         <ion-item >
+           <ion-button  class="login" type="submit"style="--ion-color-primary:#f5821f;height:68px; width:100%; " expand="block" mode="ios" [disabled]="!form.valid" >Next</ion-button>
+           
+         </ion-item>
+        </form>
+         <ion-item>
+          <ion-label class="forgot"  mode="ios" align="center" >Did'nt get OTP? 
+             <a href="/otp" style="color:#f5821f;"><ion-icon name="refresh" ></ion-icon>Resend OTP</a></ion-label>
+        </ion-item>
+    
+     </ion-card-content></ion-card>
+  </ion-content>
+</ion-content>

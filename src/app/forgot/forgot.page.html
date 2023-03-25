@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card><ion-card-header><ion-card-title>
+    <h3  align="center" style="color: #f5821f;  font-size: 20px;"><b> Enter Your Mobile Number</b></h3>
+    </ion-card-title></ion-card-header> 
+   <ion-card-content>
+     <form ngNativeValidate #form="ngForm" (ngSubmit)="forgot(form.value)">
+      
+       <ion-item>
+         <ion-label position="floating"><ion-icon name="phone-portrait-sharp"></ion-icon> Mobile Number</ion-label>
+         <ion-input type="tel" name="mob" maxLength="10" minLength="10"   required [(ngModel)]="mob"></ion-input>
+       </ion-item>
+      
+       <ion-item >
+         <ion-button  class="login" type="submit" style="--ion-color-primary:#f5821f;height:68px; width:100%; " expand="block" mode="ios" [disabled]="!form.valid" >Get OTP</ion-button>
+         
+       </ion-item>
+       
+     </form>
+   </ion-card-content></ion-card>
+</ion-content>

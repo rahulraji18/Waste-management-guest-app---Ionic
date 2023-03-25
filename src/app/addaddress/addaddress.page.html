@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Address List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-button class="but" routerLink="/address">Add new address</ion-button>
+
+<!-- <ion-grid > -->
+  <!-- <form #form="ngForm" (ngSubmit)="viewaddress(form.value)">
+    <ion-button type="submit">view</ion-button> -->
+  <!-- <ion-row>
+    <ion-col>Your Address</ion-col>
+    
+  </ion-row> -->
+
+  <!-- <ion-row  *ngFor="let details of data"><b>
+    <ion-col sm=-530px>Address</ion-col>
+    <ion-col sm=-530px>House Number</ion-col>
+    <ion-col sm=-550px>Land Mark</ion-col>
+  </b>
+  </ion-row>
+  <ion-row *ngFor="let details of data">
+
+    <ion-col>{{details.address}}</ion-col>
+    <ion-col>{{details.hname}}</ion-col>
+    <ion-col>{{details.lmark}}</ion-col>
+  </ion-row> -->
+ 
+<!-- </form> -->
+<!-- </ion-grid> -->
+
+<ion-grid>
+  <ion-row class="head">
+    <ion-col offset="0.1">
+     <h5><b>Address</b> </h5>
+    </ion-col>
+    <ion-col  offset="0.1">
+      <h5><b>House Number</b></h5>
+    </ion-col>
+    <ion-col  offset="0.1">
+     <h5><b>Land Mark</b></h5> 
+    </ion-col>
+  
+  </ion-row >
+  <div class="con">
+  <ion-row *ngFor="let details of data">
+    <ion-col  offset="0.1">
+      {{details.address}}
+    </ion-col>
+    <ion-col offset="0.1">
+      {{details.hname}}
+    </ion-col>
+    <ion-col  offset="0.1">
+      {{details.lmark}}
+    </ion-col>
+   
+ </ion-row>
+</div>
+  <!--  <ion-row>
+    <ion-col push="1">
+      [push="1"]
+    </ion-col>
+    <ion-col>
+      ion-col
+    </ion-col>
+    <ion-col>
+      ion-col
+    </ion-col>
+    <ion-col>
+      ion-col
+    </ion-col>
+  </ion-row> -->
+</ion-grid>
+
+
+
+</ion-content>

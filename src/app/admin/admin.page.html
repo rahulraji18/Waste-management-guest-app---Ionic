@@ -1,0 +1,85 @@
+
+<ion-content>
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title>
+        <h3 align="center" style="color: #f5821f;  font-size: 20px;"><b> Login</b></h3>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form ngNativeValidate #form="ngForm" (ngSubmit)="login(form.value)">
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="phone-portrait-outline"></ion-icon> Mobile Number
+          </ion-label>
+          <ion-input type="tel" name="mob" maxlength="10"  required [(ngModel)]="mob"></ion-input>
+        </ion-item>
+        <ion-item  >
+          <ion-label position="floating">
+           
+           <ion-icon name="lock-closed-outline"></ion-icon> Password </ion-label>
+           <!-- <ion-input [type]="passwordType" type="password" name="password" ></ion-input> -->
+            <ion-input [type]="passwordType" type="password" name="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"required [(ngModel)]="password" maxLength="15" minLength="8" > </ion-input> 
+
+            <!-- <ion-input [type]="passwordType" clearOnEdit="false" required minLength="6"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"></ion-input> -->
+              <!-- <div slot="end"> -->
+                <ion-icon name="eye"  slot="end" (click)="togglePassword()"  [color]="passwordShown === true ? 'primary':'gray'" ></ion-icon>
+              <!-- </div> -->
+                
+                
+        </ion-item>
+        <ion-item>
+          <ion-button class="login" type="submit" style="--ion-color-primary:#f5821f;height:68px; width:100%; "
+            expand="block" mode="ios" >Login</ion-button>
+
+        </ion-item>
+      </form>
+      <!-- <ion-item>
+        <ion-label  mode = "ios" class="forgot" align="center">OR</ion-label>
+      </ion-item> -->
+        <ion-item>
+          <ion-label class="forgot" mode="ios" align="center">
+            <!-- <a href="/forgot" style="color:#f5821f;">Forgot Password</a> -->
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-button type="submit" class="signup" mode="ios" fill="outline" expand="block" 
+            style="--ion-color-primary:#ff7700; height: 70px;;width:100%" routerLink="/registerpublic">Sign Up
+          </ion-button>
+        </ion-item>
+      
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<!-- <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="mail" routerLink="/admin" routerLinkActive="tab-selected" >
+      <ion-icon name="Home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="Notification"><ion-icon name="notifications" routerlink="/admin" routerLinkActive="tab-selected"></ion-icon>
+    <ion-label>Notification</ion-label></ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs> -->
+
+<!-- =================================================================================================== -->
+<!-- //EYE  -->
+
+<!-- [type]="passwordType"
+
+name="eye" [color]="passwordShown === true ? 'primary':'gray'" (click)="togglePassword()"
+
+ passwordType: string = 'password';
+  passwordShown: boolean = false;
+
+public togglePassword() {
+
+    if (this.passwordShown) {
+      this.passwordShown = false;
+      this.passwordType = 'password'
+    }
+    else {
+      this.passwordShown = true;
+      this.passwordType = 'text ';
+    }
+  } -->

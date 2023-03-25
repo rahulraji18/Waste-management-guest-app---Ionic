@@ -1,0 +1,27 @@
+*{
+    font-weight: 300;
+}
+ion-content{
+    --background:url('https://powerknot.com/wp-content/uploads/2021/01/CATERS_Surf_Survive_Sustain_07-800x498-1.jpg') no-repeat center center / cover ;
+     
+}
+ion-text{
+    position: relative;
+    top: 10%;
+}
+h1{
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.822);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+p{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-weight: bolder;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+ion-chip{
+   background-color: rgb(255, 153, 0);
+}
+
+

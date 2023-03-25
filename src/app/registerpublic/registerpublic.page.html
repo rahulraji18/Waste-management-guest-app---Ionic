@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <h3 style="color:#f5821f; "><b>Registration</b></h3>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form #form="ngForm"  ngNativeValidate (ngSubmit)="register(form.value)">
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="person"></ion-icon>
+            First Name
+          </ion-label>
+          <ion-input type="text" name="fname" required [(ngModel)]="fname"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="person"></ion-icon>
+            Last Name
+          </ion-label>
+          <ion-input type="text" name="lname" required [(ngModel)]="lname"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="mail"></ion-icon>
+            Email
+          </ion-label>
+          <ion-input type="mail" name="email" required [(ngModel)]="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="please include an '@' in the email address " ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="phone-portrait-sharp"></ion-icon> Mobile Number
+          </ion-label>
+          <ion-input type="tel" name="phno" maxLength="10" minLength="10"   required [(ngModel)]="mobile"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="location-sharp"></ion-icon>
+            Address
+          </ion-label>
+          <ion-textarea [(ngModel)]="address" name="address" required></ion-textarea>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="location-outline"></ion-icon>
+            Pincode
+          </ion-label>
+          <ion-input type="tel" minLength="4" name="pincode" maxLength="6"  [(ngModel)]="pincode" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="lock-closed-sharp"></ion-icon> Password
+          </ion-label>
+          <ion-input [type]="passwordType" type="password" name="password" [(ngModel)]="password" required  minLength="6" maxLength ="14" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="lock-closed-sharp" ></ion-icon> Confirm Password
+          </ion-label>
+          <ion-input [type]="passwordType" type="password" name="confirmpassword" [(ngModel)]="confirmpassword" minLength="6" maxLength ="14" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-button type="submit" expand="block" mode="ios"
+            style="--ion-color-primary:#ff7700; height: 53px;;width:100%"  >Save</ion-button>
+        </ion-item>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

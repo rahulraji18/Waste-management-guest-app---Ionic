@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+  <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+       <ion-button (click)="loadMap()" shape="round" fill="outline" style="font-size: 12px">
+        <ion-icon slot="start" name="locate"></ion-icon>
+        Locate Me
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title> </ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+
+<div class="map-wrapper">
+<div id="map_center">
+<img src="assets\location-marker.png" width="30px" />
+</div>
+<div #map id="map"></div>
+</div>
+<div id="address">
+
+<form #form="ngForm" (ngSubmit)="saveAddress(form.value)" ngNativeValidate>
+
+
+<ion-item>
+  <ion-label position="floating">Address</ion-label>
+  <ion-textarea [(ngModel)]="address" name="address" required></ion-textarea>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">House / Flat / Block no</ion-label>
+  <ion-input type="text" name="hname" [(ngModel)]="hname"  maxLength="20" required></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">Land Mark</ion-label>
+  <ion-input type="text" name="lmark" [(ngModel)]="lmark"  maxLength="20" required></ion-input>
+</ion-item>
+<div class="ion-padding">
+<ion-button expand="block" mode="ios" type="submit" [disabled]="!form.valid"  style="--ion-color-primary: #f5821f;"  >
+  <!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher> -->
+  Save Address</ion-button>
+</div>
+</form>
+
+</div>
+</ion-content>

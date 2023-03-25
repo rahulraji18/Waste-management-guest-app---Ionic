@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <form #form="ngForm" (ngSubmit)="report(form.value)">
+    <ion-icon name="calendar-number"></ion-icon>
+    <ion-label>From Date</ion-label>
+    <ion-input type="date" name="fromdate" [(ngModel)]="fromdate"></ion-input>
+
+    <ion-icon name="calendar-number"></ion-icon>
+    <ion-label>To Date</ion-label>
+    <ion-input type="date" name="todate" [(ngModel)]="todate"></ion-input>
+    <ion-button type="submit" fill="outline">
+      <ion-icon name="search"></ion-icon> search
+    </ion-button>
+    <ion-grid>
+      <ion-row>
+        <ion-col><b style="font-size: 20px;">Name</b></ion-col>
+        <ion-col><b style="font-size: 20px;">Complaint</b></ion-col>
+        <ion-col><b style="font-size: 20px;">Details</b></ion-col>
+      </ion-row>
+      <ion-row *ngFor="let drivdet of data">
+        <ion-col>{{drivdet.name}}</ion-col>
+        <ion-col>{{drivdet.description}}</ion-col>
+        <ion-col><ion-button type="submit" routerLink="/details/" [queryParams]="{id: drivdet.id}">Details</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+    </form>
+    </ion-content>                              
+     
+
+    

@@ -1,0 +1,30 @@
+ion-grid{
+    // border: solid 2px rgba(176, 207, 0, 0.705);
+    text-align: center;
+    margin-top: 80px;
+    width: 90%;
+}
+.but{
+    margin-top: 25px;
+    float: right;
+    
+}
+.head{
+    border: solid 2px rgba(176, 207, 0, 0.705);
+    text-align: center;
+    
+    width: 100%;
+}
+.con{
+    text-align:left;
+}
+ion-col{
+    font-size:small;
+    border-right:  solid 2px rgba(176, 207, 0, 0.705) ;
+    border-left:  solid 2px rgba(176, 207, 0, 0.705) ;
+    border-top:  solid 2px rgba(176, 207, 0, 0.705) ;
+    border-bottom:  solid 2px rgba(176, 207, 0, 0.705) ;
+}
+// ion-col:last-child{
+//     border:none;
+// }

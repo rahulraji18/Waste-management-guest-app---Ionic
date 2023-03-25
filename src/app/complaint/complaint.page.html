@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-menu-button slot="start"></ion-menu-button>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <!-- <div  style="background-color: rgb(31, 121, 79);"> -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <h3 style="color:#f5821f;">Complaints</h3>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form #form="ngForm" (ngSubmit)="complaint(form.value)" ngNativeValidate>
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="person"></ion-icon> Name
+          </ion-label>
+          <ion-input type="text" name="name" required [(ngModel)]="name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="home"></ion-icon> Address
+          </ion-label>
+          <!-- <ion-textarea name="address" required [(ngModel)]="address"></ion-textarea> -->
+          <ion-select name="address"  [(ngModel)]="address" required>
+            <ion-select-option *ngFor="let details of data" value="{{details.id}}">{{details.address}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="calendar"></ion-icon> Date of Complaint
+          </ion-label>
+          <br>
+          <ion-input type="datetime-local" name="calendar" required [(ngModel)]="calendar"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">
+            <ion-icon name="clipboard-outline"></ion-icon> Description
+          </ion-label>
+          <ion-textarea name="description" required [(ngModel)]="description"></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-button type="submit" expand="block" mode="ios"
+            style="--ion-color-primary:#ff7700; height: 53px;;width:100%">Save</ion-button>
+        </ion-item>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<!-- </div> -->
+<!-- <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" routerLink="/tabs">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="Complaints" routerLink="/complaint" selected>
+      <ion-icon name="clipboard-outline"></ion-icon>
+      <ion-label>Complaints</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="Location" routerLink="/location">
+      <ion-icon name="location"></ion-icon>
+      <ion-label>Location</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs> -->
